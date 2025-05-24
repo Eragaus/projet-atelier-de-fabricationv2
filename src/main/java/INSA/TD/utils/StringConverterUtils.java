@@ -1,5 +1,6 @@
 package INSA.TD.utils;
 
+import INSA.TD.models.Machine;
 import INSA.TD.models.etat.machine.EtatMachine;
 import javafx.util.StringConverter;
 
@@ -17,6 +18,21 @@ public class StringConverterUtils {
 
             @Override
             public EtatMachine fromString(String string) {
+                // Not used since we're working with objects
+                return null;
+            }
+        };
+    }
+
+    public static StringConverter<Machine> toMachineStringConverter() {
+        return new StringConverter<>() {
+            @Override
+            public String toString(Machine entity) {
+                return entity == null ? "" : entity.getId();
+            }
+
+            @Override
+            public Machine fromString(String string) {
                 // Not used since we're working with objects
                 return null;
             }

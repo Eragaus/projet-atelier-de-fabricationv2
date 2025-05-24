@@ -9,8 +9,8 @@ import javafx.util.StringConverter;
 
 public class ChoiceBoxBlock<T> extends VBox {
 
-    private Label label;
-    private CustomChoiceBox<T> choiceBox;
+    private final Label label;
+    private final CustomChoiceBox<T> choiceBox;
 
     public ChoiceBoxBlock(String label,
                           ObservableList<T> items,
