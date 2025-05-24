@@ -13,6 +13,27 @@ public class ChoiceBoxBlock<T> extends VBox {
     private final CustomChoiceBox<T> choiceBox;
 
     public ChoiceBoxBlock(String label,
+                          ObservableList<T> items) {
+        this.label = new TitleLabel(label);
+        choiceBox = new CustomChoiceBox<>(items);
+        getChildren().addAll(
+                this.label,
+                choiceBox
+        );
+    }
+
+    public ChoiceBoxBlock(String label,
+                          ObservableList<T> items,
+                          StringConverter<T> converter) {
+        this.label = new TitleLabel(label);
+        choiceBox = new CustomChoiceBox<>(items, converter);
+        getChildren().addAll(
+                this.label,
+                choiceBox
+        );
+    }
+
+    public ChoiceBoxBlock(String label,
                           ObservableList<T> items,
                           T defaultValue,
                           StringConverter<T> converter) {

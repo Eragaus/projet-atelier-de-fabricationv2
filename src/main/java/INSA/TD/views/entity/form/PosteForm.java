@@ -54,14 +54,14 @@ public class PosteForm extends AbstractForm<Poste> {
     protected void handleAddAction() {
         if (!Objects.isNull(referenceTextField.getText()) && !referenceTextField.getText().isEmpty()) {
             getErrorLabel().setVisible(false);
-            Poste machine = new Poste(
+            Poste poste = new Poste(
                     machineListView.getSelectedItems(),
                     descriptionTextField.getText(),
                     referenceTextField.getText()
             );
 
             if (Objects.nonNull(getConsumer())) {
-                getConsumer().accept(machine);
+                getConsumer().accept(poste);
             }
         } else {
             getErrorLabel().setText("La référence ne doit pas être vide.");
