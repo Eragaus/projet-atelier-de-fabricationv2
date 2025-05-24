@@ -41,7 +41,7 @@ public class OperateurForm extends AbstractForm<Operateur> {
         );
 
         vbox.getChildren().addAll(
-                new H1TitleLabel("Création machine"),
+                new H1TitleLabel("Création opérateur"),
                 referenceTextField,
                 prenomTextField,
                 nameField,
